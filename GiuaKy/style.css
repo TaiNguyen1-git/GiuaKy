@@ -1,0 +1,239 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    filter: blur(50px); 
+    transition: background-image 0.3s ease-in-out;
+}
+    h1 {
+        text-align: center;
+        color: white;
+        font-size: 3em;
+        margin-bottom: 10px; 
+        position: relative;
+        top: -100px; 
+    }
+.gallery {
+    position: relative;
+    z-index: 1; 
+    width: 100%;
+}
+
+.gallery-container {
+    align-items: center;
+    display: flex;
+    height: 400px;
+    margin: 0 auto;
+    max-width: 1000px;
+    position: relative;
+}
+
+.gallery-item {
+    height: 200px;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    width: 600px;
+    z-index: 0;
+    border-radius: 15px;
+    background-size: contain;
+}
+.gallery-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    font-size: 16px; 
+    z-index: 10; 
+}
+
+.gallery-item:hover .gallery-button {
+    display: flex; 
+}
+
+.gallery-button-play {
+    left: 10px; 
+}
+
+.gallery-button-link {
+    right: 10px;
+}
+.gallery-item-1 {
+    left: 15%;
+    opacity: .4;
+    transform: translateX(-50%);
+}
+
+.gallery-item-2,
+.gallery-item-4 {
+    height: 250px;
+    opacity: 0.8;
+    width: 600px;
+    z-index: 1;
+}
+
+.gallery-item-2 {
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+.gallery-item-3 {
+    box-shadow: -2px 5px 33px 6px rgb(0, 0, 0.35);
+    height: 350px;
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    z-index: 2;
+}
+
+.gallery-item-4 {
+    left: 70%;
+    transform: translateX(-50%);
+}
+
+.gallery-controls {
+    position: absolute;
+    top: 50%; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+.gallery-nav {
+    bottom: -15px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.gallery-nav li {
+    background: #ccc;
+    border-radius: 50%;
+    height: 10px;
+    margin: 0 8px;
+    width: 10px;
+    transition: all 0.3s ease;
+}
+
+.gallery-nav li.gallery-item-selected {
+    background: #555;
+    width: 20px; 
+}
+
+.gallery-controls button {
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    pointer-events: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+    border: none; 
+}
+
+.gallery-controls button:focus {
+    outline: none;
+}
+
+.gallery-controls-previous,
+.gallery-controls-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.gallery-controls-previous {
+    left: 10px;
+}
+
+.gallery-controls-next {
+    right: 10px;
+}
+
+.gallery-controls-previous::before,
+.gallery-controls-next::before {
+    border: solid #000;
+    border-width: 0 5px 5px 0;
+    content: '';
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    position: relative;
+    top: 25%;
+    transform: translateY(-50%);
+}
+
+.gallery-controls-previous::before {
+    left: 0;
+    transform: translateY(-50%) rotate(135deg);
+}
+
+.gallery-controls-next::before {
+    right: 0;
+    transform: translateY(-50%) rotate(-45deg);
+}
+.gallery-controls-previous:hover::before,
+.gallery-controls-next:hover::before {
+    opacity: 0.8;
+}
+
+
+.gallery-controls button:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.gallery-nav {
+    bottom: -15px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.gallery-nav li {
+    background: #ccc;
+    border-radius: 50%;
+    height: 10px;
+    margin: 0 8px;
+    width: 10px;
+    transition: all 0.3s ease;
+}
+
+.gallery-nav li.gallery-item-selected {
+    background: #555;
+    width: 20px;
+}
